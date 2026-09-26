@@ -1,5 +1,12 @@
 # Fetch changelog
 
+## v0.3.0
+_2026-09-26_ (CodeKunde fork)
+
+ * **Breaking:** requires NodeJS 18+. NodeJS now uses its built-in `fetch`, like browsers, web workers and React Native already did, so `node-fetch` (and its deprecated `node-domexception`) is no longer a dependency
+ * Single entry for all platforms; no build step
+ * `fetch` looks up the global `fetch` on each call, so a polyfill or test stub installed after import is used
+
 ## v0.2.1
 _2023-09-12_
 

@@ -1,65 +1,34 @@
 {
   "name": "@buttercup/fetch",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Fetch adapter for cross-platform use.",
   "type": "module",
   "exports": {
     ".": {
-      "browser": "./dist/index.browser.js",
-      "default": "./dist/index.node.js"
+      "types": "./index.d.ts",
+      "default": "./index.js"
     }
   },
-  "react-native": "./dist/index.browser.js",
-  "types": "./dist/index.node.d.ts",
-  "scripts": {
-    "build": "npm run clean && tsc",
-    "clean": "rimraf dist",
-    "format": "prettier --write \"{source,test}/**/*.{js,ts}\"",
-    "prepublishOnly": "npm run build",
-    "test": "npm run test:node && npm run test:format",
-    "test:format": "prettier --check \"{source,test}/**/*.{js,ts}\"",
-    "test:node": "npm run build && mocha 'test/node/**.spec.js'"
-  },
+  "react-native": "./index.js",
+  "types": "./index.d.ts",
   "files": [
-    "./dist/**/*"
+    "index.js",
+    "index.d.ts"
   ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/buttercup/fetch.git"
-  },
-  "lint-staged": {
-    "{source,test}/**/*.{js,ts}": [
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "url": "http://192.168.168.6:3050/buttercup.codekunde/fetch.git"
   },
   "keywords": [
     "fetch",
     "request"
   ],
   "author": "Perry Mitchell <perry@perrymitchell.net>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/buttercup/fetch/issues"
-  },
-  "homepage": "https://github.com/buttercup/fetch#readme",
-  "devDependencies": {
-    "@types/node": "^20.12.7",
-    "chai": "^5.1.0",
-    "husky": "^4.3.8",
-    "json-server": "^0.17.1",
-    "lint-staged": "^15.2.2",
-    "mocha": "^10.4.0",
-    "prettier": "^3.2.5",
-    "rimraf": "^5.0.5",
-    "typescript": "^4.9.5",
-    "url-join": "^5.0.0"
-  },
-  "optionalDependencies": {
-    "node-fetch": "^3.3.0"
-  }
+  "license": "MIT"
 }

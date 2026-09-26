@@ -1,44 +1,23 @@
-# Fetch
-> Fetch adapter for cross-platform use.
+# @buttercup/fetch
 
-[![Buttercup](https://cdn.rawgit.com/buttercup-pw/buttercup-assets/6582a033/badge/buttercup-slim.svg)](https://buttercup.pw) [![npm (scoped)](https://img.shields.io/npm/v/@buttercup/fetch)](https://www.npmjs.com/package/@buttercup/fetch) ![Tests](https://github.com/buttercup/fetch/actions/workflows/test.yml/badge.svg)
+Fetch adapter for cross-platform use: exports `fetch`, `Headers`, `Request` and `Response`.
 
-## About
+This is the CodeKunde fork of [buttercup/fetch](https://github.com/buttercup/fetch) 0.2.1. The original used `node-fetch` on NodeJS and the built-in `fetch` elsewhere. NodeJS has had a built-in `fetch` since version 18, so this fork uses the built-in one everywhere (NodeJS 18+, browsers, web workers and React Native) and has no dependencies. That drops `node-fetch` and its deprecated `node-domexception` dependency.
 
-This library exports `fetch` in various environments, such as within a browser or under NodeJS:
-
- * Browsers get the native `window.fetch`
- * NodeJS gets `node-fetch`
-
-_This library was designed to be used primarily within Buttercup and its supporting libraries: Features and fixes implemented here will be oriented to furthering Buttercup's goals, and unnessarily changes may be rejected due to that._
-
-## Installation
-
-For browser use you need only install this library:
-
-```shell
-npm install @buttercup/fetch --save-dev
-```
-
-For NodeJS use you must also install `node-fetch`:
-
-```shell
-npm install @buttercup/fetch node-fetch --save
-```
+`fetch` looks up the global `fetch` on each call, so a polyfill or test stub installed after import is still used.
 
 ## Usage
 
-You can import the various components related to fetch regardless of the entry your application uses:
+```js
+import { fetch, Headers } from "@buttercup/fetch";
 
-```typescript
-import {
-    fetch,
-    Headers,
-    Request,
-    Response
-} from "@buttercup/fetch";
+const response = await fetch("https://example.com", {
+    headers: new Headers({ Accept: "application/json" })
+});
+```
 
-// ...
+## Tests
 
-const res = await fetch("https://...");
+```sh
+npm test
 ```

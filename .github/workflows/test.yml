@@ -7,22 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.x, 18.x]
+        node-version: [22.x, 24.x]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v5
       - name: Node.js specs ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run test:node
-  formatting:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Formatting
-        uses: actions/setup-node@v1
-        with:
-          node-version: 18.x
-      - run: npm ci
-      - run: npm run test:format
+      # No dependencies to install
+      - run: npm test
