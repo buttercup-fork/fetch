@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://192.168.168.6:3050/buttercup.codekunde/fetch.git"
+    "url": "git+https://github.com/buttercup-fork/fetch.git"
   },
   "keywords": [
     "fetch",

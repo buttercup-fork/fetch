@@ -5,6 +5,7 @@
  * Requires NodeJS 22+ (18 and 20 are end of life); CI covers 22 and 24
  * Readme badge served from the repo instead of a dead CDN link
  * CI runs on branch pushes only, not tags
+ * Repository, install command and test badge point to `github.com/buttercup-fork/fetch`
 
 ## v0.3.0
 _2026-09-26_ (CodeKunde fork)
