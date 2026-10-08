@@ -3,14 +3,14 @@
 
 **CodeKunde fork** of [buttercup/fetch](https://github.com/buttercup/fetch), from 0.2.1. NodeJS has had a built-in `fetch` since version 18, so from 0.3.0 this fork uses the built-in one everywhere and no longer needs `node-fetch` (see the [changelog](CHANGELOG.md)). The badges below are upstream's.
 
-[![Buttercup](https://cdn.rawgit.com/buttercup-pw/buttercup-assets/6582a033/badge/buttercup-slim.svg)](https://buttercup.pw) [![npm (scoped)](https://img.shields.io/npm/v/@buttercup/fetch)](https://www.npmjs.com/package/@buttercup/fetch) ![Tests](https://github.com/buttercup/fetch/actions/workflows/test.yml/badge.svg)
+[![Buttercup](images/buttercup-slim.svg)](https://buttercup.pw) [![npm (scoped)](https://img.shields.io/npm/v/@buttercup/fetch)](https://www.npmjs.com/package/@buttercup/fetch) ![Tests](https://github.com/buttercup/fetch/actions/workflows/test.yml/badge.svg)
 
 ## About
 
 This library exports `fetch` in various environments, such as within a browser or under NodeJS:
 
  * Browsers, web workers and React Native get the native `fetch`
- * NodeJS (18+) gets its built-in `fetch` (versions before 0.3.0 used `node-fetch`)
+ * NodeJS (22+) gets its built-in `fetch` (versions before 0.3.0 used `node-fetch`)
 
 _This library was designed to be used primarily within Buttercup and its supporting libraries: Features and fixes implemented here will be oriented to furthering Buttercup's goals, and unnessarily changes may be rejected due to that._
 

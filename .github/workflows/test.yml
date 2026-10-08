@@ -1,6 +1,9 @@
 name: Tests
 
-on: push
+# Branches only: pushing a tag shouldn't start a run of its own
+on:
+  push:
+    branches: ["**"]
 
 jobs:
   unit:
